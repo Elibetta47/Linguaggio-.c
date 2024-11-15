@@ -1,0 +1,60 @@
+import datetime 
+
+def assistente_virtuale(comando):    
+    if comando == "Qual è la data di oggi?":        
+        oggi = datetime.datetoday()          
+        risposta = "La data di oggi è " + oggi.strftime("%d/%m/%Y")    
+    elif comando == "Che ore sono?":        
+        ora_attuale = datetime.datetime.now().time()          
+        risposta = "L'ora attuale è " + ora_attuale.strftime("%H:%M")    
+    elif comando == "Come ti chiami?":        
+        risposta = "Mi chiamo Assistente Virtuale"    
+    else:        
+        risposta = "Non ho capito la tua domanda."      
+    return risposta 
+    
+while True    
+    comando_utente = input("Cosa vuoi sapere? ")
+        
+    if comando_utente.lower() == "esci":        
+        print("Arrivederci!")        
+        break    
+    else:        
+        print(assistente_virtuale(comando_utente)) 
+        
+        
+        
+        
+        
+        
+import datetime 
+
+def assistente_virtuale(comando):  
+    # Converte il comando in miuscolo per evitare problemi di riconoscimento
+    comando = comando.lower()
+    
+    # Usa parole chiave per riconoscere i comandi
+    if "data" in comando:       
+        oggi = datetime.datetoday()          
+        risposta = "La data di oggi è " + oggi.strftime("%d/%m/%Y") 
+    elif "ora" in comando:        
+        ora_attuale = datetime.datetime.now().time()          
+        risposta = "L'ora attuale è " + ora_attuale.strftime("%H:%M")
+    elif "nome" in comando or "come ti chiami" in comando:         
+        risposta = "Mi chiamo Assistente Virtuale"    
+    else:        
+        # Risposta più informativa per comandi non riconosciuti
+        risposta = "Non ho capito la tua domanda. Gentilmente puoi chiedermi la data, l'ora o il mio nome."
+             
+    return risposta 
+    
+while True    
+    comando_utente = input("Cosa vuoi sapere? ")
+        
+    # Converte l'input dell'utente in minuscolo per facilitare il riconoscimento del comando di uscita
+    if comando_utente.lower() == "esci":        
+        print("Arrivederci!")        
+        break    
+    else:        
+        print(assistente_virtuale(comando_utente)) 
+        
